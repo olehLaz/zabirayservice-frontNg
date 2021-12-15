@@ -1,4 +1,6 @@
 
+export const countNode = 'count';
+
 export interface CountState {
   count: number;
   updatedAt: number;
