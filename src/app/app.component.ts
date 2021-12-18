@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
-import {CountState} from "./redux/reducers/count/count.reducer";
-import {select, Store} from "@ngrx/store";
-import {Observable} from "rxjs";
-import {selectCount, selectUpdateAt} from "./redux/selectors/count.selectors";
+import {Component} from '@angular/core';
+import {Store} from "@ngrx/store";
+import {clear, decrease, increase} from "./redux/actions/count.actions";
 
 @Component({
   selector: 'app-root',
@@ -10,21 +8,39 @@ import {selectCount, selectUpdateAt} from "./redux/selectors/count.selectors";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  counter: number = 0;
+  updatedAt: number = 2445452232;
 
-  public count$: Observable<number> = this.store$.pipe(select(selectCount))
-  public updatedAt$: Observable<number> = this.store$.pipe(select(selectUpdateAt))
+  /*
+  public count$: Observable<number> = this.store$.pipe(select(selectCount));
+  public disableDecrease$: Observable<boolean> = this.count$.pipe(map(count => count<=0));
+  public updatedAt$: Observable<number> = this.store$.pipe(select(selectUpdateAt));
 
-  constructor(private store$: Store<CountState>) {
+*/
+
+
+  constructor(private store: Store) {
+  }
+  cannotDecrease(): boolean {
+    return this.counter <= 0;
   }
 
-  increase() {
-
+  increase(): void {
+    this.updatedAt = Date.now();
+    this.counter++;
+    this.store.dispatch(increase());
   }
-  decrease() {
 
+  decrease(): void {
+    this.updatedAt = Date.now();
+    this.counter--;
+    this.store.dispatch(decrease());
   }
-  clear() {
 
+  clear(): void {
+    this.updatedAt = Date.now();
+    this.counter = 0;
+    this.store.dispatch(clear());
   }
 
 }

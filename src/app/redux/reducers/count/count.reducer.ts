@@ -1,9 +1,11 @@
 
+import {State} from "@ngrx/store";
+
 export const countNode = 'count';
 
 export interface CountState {
   count: number;
-  updatedAt: number;
+  updatedAt?: number;
 }
 
 const initialState: CountState = {
@@ -11,6 +13,32 @@ const initialState: CountState = {
   updatedAt: Date.now()
 };
 
-export const countReducer = (state = initialState, action: any) => {
-    return state;
-}
+export const countReducer = (state = initialState) => {
+
+  return state;
+
+  /*
+
+  switch (action.type) {
+    case countActionsType.increase:
+      return {
+        ...state,
+        count: state.count + 1
+      };
+    case countActionsType.decrease:
+      return {
+        ...state,
+        count: state.count - 1
+      };
+    case countActionsType.clear:
+      return {
+        ...state,
+        count: 0
+      };
+    default:
+      return {...state};
+  }
+ // return state;
+
+   */
+};
