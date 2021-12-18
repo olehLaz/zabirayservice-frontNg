@@ -1,10 +1,10 @@
 <button class="mat-raised-button" (click)="increase()">Increase</button>
-<button class="mat-raised-button" (click)="decrease()">Decrease</button>
-<button class="mat-raised-button" (click)="clear()">Clear</button>
+<button class="mat-raised-button" (click)="decrease()" [disabled]="cannotDecrease$ | async" >Decrease</button>
+<button class="mat-raised-button" (click)="clear()"    [disabled]="cannotDecrease$ | async" >Clear</button>
 <p></p>
 <div>
   <span class="mat-title">
-    Counter is : {{ counter }} : Update at: {{ updatedAt | date: "yyyy-MM-dd:hh:mm:cc"}}
+    Counter is : {{ count$ | async }} : Update at: {{ updatedAt | date: "yyyy-MM-dd:hh:mm:cc"}}
   </span>
 </div>
 

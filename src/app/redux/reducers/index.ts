@@ -1,15 +1,15 @@
 import {Action, ActionReducer, ActionReducerMap, createFeatureSelector, createSelector, MetaReducer} from "@ngrx/store";
 import { environment} from "../../../environments/environment";
-import {countNode, countReducer, CountState} from "./count/count.reducer";
+import { countReducer, CountState } from "./count/count.reducer";
 
 
 
 export interface State {
-  [countNode]: CountState
+  counter: CountState
 }
 
 export const reducers: ActionReducerMap<State> = {
-  [countNode]: countReducer
+  counter: countReducer
 };
 
 export const metaReducers: MetaReducer<State> [] = !environment.production ? [] : [];
