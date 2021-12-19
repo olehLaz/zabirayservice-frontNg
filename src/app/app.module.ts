@@ -13,8 +13,10 @@ import {metaReducers, reducers} from "./redux/reducers";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LoggerService} from "./services/logger.service";
 import {BetterLoggerService} from "./services/better-logger.service";
-import {PAGE_CONFIG} from "./config/page-config";
+import {PAGE_CONFIG, PageConfigValue} from "./config/page-config";
 import {ProductService} from "./services/product.service";
+import {GreetingsService} from "./services/greetings.service";
+import {HumanService} from "./services/human.service";
 
 @NgModule({
   declarations: [
@@ -46,7 +48,19 @@ import {ProductService} from "./services/product.service";
     },
     {
       provide: PAGE_CONFIG,
-      useValue: { title: 'приложение из примеров'}
+     useClass: PageConfigValue
+    },
+
+    HumanService,
+    {
+      provide: GreetingsService,
+      useFactory: (
+        loggerService: LoggerService,
+        humanService: HumanService,
+      ) => {
+        return new GreetingsService(loggerService, humanService.information().name);
+      },
+      deps: [LoggerService, HumanService]
     }
   ],
 

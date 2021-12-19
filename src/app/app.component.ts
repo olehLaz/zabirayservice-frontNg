@@ -5,10 +5,11 @@ import {countSelector, updateAtSelector} from "./redux/selectors/count.selectors
 import {map} from "rxjs/operators";
 import {LoggerService} from "./services/logger.service";
 import {BetterLoggerService} from "./services/better-logger.service";
-import {PAGE_CONFIG, PageConfig} from "./config/page-config";
+import {PAGE_CONFIG, PageConfig, PageConfigValue} from "./config/page-config";
 import {UserService} from "./services/user.service";
 import {ProductService} from "./services/product.service";
 import {ImageService} from "./services/image.service";
+import {GreetingsService} from "./services/greetings.service";
 
 
 @Component({
@@ -37,14 +38,20 @@ export class AppComponent {
   constructor(private store: Store,
               private logger: LoggerService,
               private betterLogger: BetterLoggerService,
-              @Inject(PAGE_CONFIG) pageConfig: PageConfig,
+              @Inject(PAGE_CONFIG) pageConfig: PageConfigValue,
               private userService: UserService, //подключаем в конструктор в компоненте
               private productService: ProductService, //подключаем в конструктор в компоненте
-              private imageService: ImageService
+              private imageService: ImageService,
+
+              private  greetingsService: GreetingsService
 
               ) {
+    console.log(greetingsService.getMessage());
+
+    debugger;
+
     this.title = pageConfig.title;
-    logger.info('app.component инициализороан' );
+    logger.info('app.component инициализорован' );
     betterLogger.info('app.component инициализороан от  betterLogger' );
     this.user = userService.userInfo;
   }

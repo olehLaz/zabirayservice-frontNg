@@ -1,5 +1,5 @@
 import {InjectionToken} from "@angular/core";
-import {Container} from "@angular/compiler/src/i18n/i18n_ast";
+
 
 /*
 IoC Containers
@@ -10,5 +10,14 @@ container.get(Foo) создаст объект или вернёт сущест�
 export interface PageConfig {
   title: string;
 }
+export class PageConfigValue implements PageConfig {
+  private _title: string = ' значение из PageConfigValue';
+
+
+  get title(): string {
+    return this._title;
+  }
+}
+
 
 export const PAGE_CONFIG = new InjectionToken<PageConfig>('page.config');
