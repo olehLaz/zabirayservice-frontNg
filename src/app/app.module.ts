@@ -11,6 +11,9 @@ import {AppEffects} from "./app.effects";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import {metaReducers, reducers} from "./redux/reducers";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {LoggerService} from "./services/logger.service";
+import {BetterLoggerService} from "./services/better-logger.service";
+import {PAGE_CONFIG} from "./config/page-config";
 
 @NgModule({
   declarations: [
@@ -31,7 +34,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StoreRouterConnectingModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [],
+  //добавляем сервис
+  providers: [
+    BetterLoggerService,
+    {
+      provide: LoggerService,
+      useExisting: BetterLoggerService,
+      // useClass: BetterLoggerService
+    },
+    {
+      provide: PAGE_CONFIG,
+      useValue: { title: 'приложение из примеров'}
+    }
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

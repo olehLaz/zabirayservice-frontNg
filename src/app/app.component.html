@@ -1,8 +1,12 @@
+
+<div class="mat-title">  {{ title }} </div>
 <button class="mat-raised-button" (click)="increase()">Increase</button>
 <button class="mat-raised-button" (click)="decrease()" [disabled]="cannotDecrease$ | async" >Decrease</button>
 <button class="mat-raised-button" (click)="clear()"    [disabled]="cannotDecrease$ | async" >Clear</button>
 <p></p>
 <div>
+
+
   <span class="mat-title">
     Counter is : {{ count$ | async }} :
     <p *ngIf="updatedAt$ | async">
