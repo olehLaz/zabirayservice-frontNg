@@ -4,7 +4,10 @@
 <p></p>
 <div>
   <span class="mat-title">
-    Counter is : {{ count$ | async }} : Update at: {{ updatedAt | date: "yyyy-MM-dd:hh:mm:cc"}}
+    Counter is : {{ count$ | async }} :
+    <p *ngIf="updatedAt$ | async">
+      Update at: {{ updatedAt$ | async | date: "yyyy-MM-dd  hh:mm:ss"}}
+    </p>
   </span>
 </div>
 

@@ -1,11 +1,13 @@
 
 import {Action, createReducer, on, State} from "@ngrx/store";
-import {clear, countActionsType, decrease, increase} from "../../actions/count.actions";
+import {changeUpdatedAt, clear, countActionsType, decrease, increase} from "../../actions/count.actions";
+import {state} from "@angular/animations";
 
 export const countNode = 'count';
 
 export interface CountState {
   count: number;
+  updatedAt?: number
 
 }
 
@@ -28,7 +30,10 @@ export const countReducer = createReducer(
     ...state,
     count: 0
   })),
-
+  on(changeUpdatedAt, (state, action) => ({
+    ...state,
+    updatedAt: action.updatedAt
+  }))
 
 );
 

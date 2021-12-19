@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {clear, decrease, increase} from "./redux/actions/count.actions";
-import {countSelector} from "./redux/selectors/count.selectors";
+import {countSelector, updateAtSelector} from "./redux/selectors/count.selectors";
 import {map} from "rxjs/operators";
 
 @Component({
@@ -11,10 +11,11 @@ import {map} from "rxjs/operators";
 })
 export class AppComponent {
  // counter: number = 0;
-  updatedAt?: number;
+//  updatedAt?: number;
 
   count$ = this.store.select(countSelector);
   cannotDecrease$ = this.count$.pipe(map(count => count<=0));
+  updatedAt$ = this.store.select(updateAtSelector);
   /*
   public count$: Observable<number> = this.store$.pipe(select(selectCount));
   public disableDecrease$: Observable<boolean> = this.count$.pipe(map(count => count<=0));
@@ -32,17 +33,17 @@ export class AppComponent {
   }
 */
   increase(): void {
-    this.updatedAt = Date.now();
+ //   this.updatedAt = Date.now();
     this.store.dispatch(increase());
   }
 
   decrease(): void {
-    this.updatedAt = Date.now();
+ //   this.updatedAt = Date.now();
     this.store.dispatch(decrease());
   }
 
   clear(): void {
-    this.updatedAt = Date.now();
+ //   this.updatedAt = Date.now();
     this.store.dispatch(clear());
   }
 }
