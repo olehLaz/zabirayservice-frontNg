@@ -7,12 +7,18 @@ import {LoggerService} from "./services/logger.service";
 import {BetterLoggerService} from "./services/better-logger.service";
 import {PAGE_CONFIG, PageConfig} from "./config/page-config";
 import {UserService} from "./services/user.service";
+import {ProductService} from "./services/product.service";
+import {ImageService} from "./services/image.service";
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ImageService] // добавляем сразу в компоненту
+ // viewProviders: [ImageService] // добавляем сразу в компоненту
+
+
 })
 export class AppComponent {
 
@@ -32,7 +38,9 @@ export class AppComponent {
               private logger: LoggerService,
               private betterLogger: BetterLoggerService,
               @Inject(PAGE_CONFIG) pageConfig: PageConfig,
-              private userService: UserService //подключаем в конструктор в компоненте
+              private userService: UserService, //подключаем в конструктор в компоненте
+              private productService: ProductService, //подключаем в конструктор в компоненте
+              private imageService: ImageService
 
               ) {
     this.title = pageConfig.title;

@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LoggerService} from "./services/logger.service";
 import {BetterLoggerService} from "./services/better-logger.service";
 import {PAGE_CONFIG} from "./config/page-config";
+import {ProductService} from "./services/product.service";
 
 @NgModule({
   declarations: [
@@ -34,8 +35,9 @@ import {PAGE_CONFIG} from "./config/page-config";
     StoreRouterConnectingModule.forRoot(),
     BrowserAnimationsModule
   ],
-  //добавляем сервис
+
   providers: [
+    ProductService, //добавляем сервис
     BetterLoggerService,
     {
       provide: LoggerService,
