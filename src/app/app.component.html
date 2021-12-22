@@ -1,14 +1,30 @@
+<div class="app-wrapper">
+
+  <app-header class="header"></app-header>
+  <app-navbar class="nav"></app-navbar>
+  <!--[входящие параметры ддя technologies] = параматр из app.components-->
+  <app-technologies class="content"
+  [title] = "title"
+  [user] = "user"
+  ></app-technologies>
+
+  <router-outlet></router-outlet>
+  <app-footer class="footer"></app-footer>
+</div>
+
+<!--
 
 <div class="mat-title">  {{ title }} </div>
+
 <div class="mat-title">  {{ user }} </div>
 
 
 <button class="mat-raised-button" (click)="increase()">Increase</button>
 <button class="mat-raised-button" (click)="decrease()" [disabled]="cannotDecrease$ | async" >Decrease</button>
 <button class="mat-raised-button" (click)="clear()"    [disabled]="cannotDecrease$ | async" >Clear</button>
+
 <p></p>
 <div>
-
 
   <span class="mat-title">
     Counter is : {{ count$ | async }} :
@@ -17,6 +33,4 @@
     </p>
   </span>
 </div>
-
-
-<router-outlet></router-outlet>
+-->

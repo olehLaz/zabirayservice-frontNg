@@ -17,10 +17,18 @@ import {PAGE_CONFIG, PageConfigValue} from "./config/page-config";
 import {ProductService} from "./services/product.service";
 import {GreetingsService} from "./services/greetings.service";
 import {HumanService} from "./services/human.service";
+import { HeaderComponent } from './views/header/header.component';
+import { FooterComponent } from './views/footer/footer.component';
+import { TechnologiesComponent } from './views/technologies/technologies.component';
+import { NavbarComponent } from './views/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    TechnologiesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
