@@ -21,6 +21,7 @@ import { HeaderComponent } from './views/header/header.component';
 import { FooterComponent } from './views/footer/footer.component';
 import { TechnologiesComponent } from './views/technologies/technologies.component';
 import { NavbarComponent } from './views/navbar/navbar.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     HeaderComponent,
     FooterComponent,
     TechnologiesComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -11,10 +11,13 @@ import {Component, OnInit} from '@angular/core';
         Messages
       </div>
       <div>
-        Links
+        News
       </div>
       <div>
-        Posts
+        Music
+      </div>
+      <div>
+        Setting
       </div>
     </div>`,
   styleUrls: ['./navbar.component.css']
