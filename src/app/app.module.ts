@@ -22,6 +22,7 @@ import { FooterComponent } from './views/footer/footer.component';
 import { TechnologiesComponent } from './views/technologies/technologies.component';
 import { NavbarComponent } from './views/navbar/navbar.component';
 import { ProfileComponent } from './views/profile/profile.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProfileComponent } from './views/profile/profile.component';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
 
   providers: [
