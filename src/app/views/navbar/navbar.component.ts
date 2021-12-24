@@ -3,21 +3,21 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-navbar',
   template: `
-    <div>
-      <div>
-        Profile
+    <div class="nav">
+      <div class="item">
+        <a>Profile</a>
       </div>
-      <div>
-        Messages
+      <div class="item">
+        <a>Messages</a>
       </div>
-      <div>
-        News
+      <div class="item">
+        <a>News</a>
       </div>
-      <div>
-        Music
+      <div class="item">
+        <a>Music</a>
       </div>
-      <div>
-        Setting
+      <div class="item">
+        <a>Setting</a>
       </div>
     </div>`,
   styleUrls: ['./navbar.component.css']

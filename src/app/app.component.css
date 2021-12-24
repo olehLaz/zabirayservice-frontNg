@@ -13,22 +13,22 @@
   grid-gap: 10px;
 
 }
+
 .header {
   grid-area: h;
-  padding: 5px;
-  margin-block: 0px;
-
 }
-.nav {
+
+.navbar {
   padding-top: 40px;
-  padding-left: 10px;
   grid-area: n;
 }
+
 .content {
-  grid-area: c;
   padding-top: 40px;
-  padding-left: 10px;
+  grid-area: c;
+
 }
+
 
 .footer {
   padding-top: 40px;

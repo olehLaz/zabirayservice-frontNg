@@ -1,0 +1,25 @@
+.content {
+  background-color: #d5ecef;
+
+}
+
+.content img {
+  width: 1150px;
+  height: 160px;
+}
+
+
+
+/*
+
+.content {
+  grid-area: c;
+  padding-top: 40px;
+  padding-left: 10px;
+}
+*/
+
+
+.item {
+
+}

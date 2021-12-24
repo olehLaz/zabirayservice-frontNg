@@ -1,3 +1,12 @@
-div {
+.nav {
+
+  padding-left: 10px;
   background-color: #d4cdab;
+
+}
+
+
+
+.item {
+  color: #384e53;
 }
