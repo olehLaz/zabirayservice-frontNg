@@ -3,8 +3,8 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-navbar',
   template: `
-    <div class="nav">
-      <div class="item">
+    <div class="mat-tab-nav-bar">
+      <div class="item active">
         <a>Profile</a>
       </div>
       <div class="item">
